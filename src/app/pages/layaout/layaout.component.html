@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <div class="container-fluid d-flex justify-content-between align-items-baseline" style="margin-left: 5px;background: linear-gradient(135deg, #1428A0 0%, #2A2F4F 100%)">
+     <div>
+      <button class="btn btn-primary" style="margin-bottom: 10px; background: linear-gradient(135deg, #1428A0 0%, #2A2F4F 100%)" (click)="toggleSidebar()">☰</button>
+
+    </div>
+    <div class="d-flex justify-content-end" style="margin-top: 15px;">
+
+
+      <img src="assets/images/Samsung-Logo-inicio.png" width="150px" center="">
+    </div>
+      <!-- Icono de usuario con menú desplegable -->
+    <div class="d-flex justify-content-end">
+        <span style="color: rgb(255, 255, 255);">{{ 'Bienvenido' | translate }} {{usuario}}</span>
+      <div ngbDropdown class="d-flex align-items-center dropdown" style="margin-right: 20px; background: linear-gradient(135deg, #1428A0 0%, #2A2F4F 100%); margin-top: -4px;color: rgb(255, 255, 255);">
+        <i class="bi bi-person-circle user-icon" ngbDropdownToggle></i>
+        <div ngbDropdownMenu class="dropdown-menu-right" style="background: linear-gradient(135deg, #1428A0 0%, #2A2F4F 100%)">
+          <button class="dropdown-item" (click)="myaccount()" style="color: white;">{{ 'CambiarContraseña' | translate }}</button>
+          <button class="dropdown-item" (click)="signOut()" style="color: white;">{{ 'CerrarSession' | translate }}</button>
+
+
+        </div>
+      </div>
+     </div>
+    </div>
+  </nav>
+  <!-- Contenedor para la sidebar y el contenido principal -->
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div [ngClass]="{'d-none': !sidebarOpen}" >
+
+
+    <app-sidebar [menuItems]="menuItems"></app-sidebar>
+  </div>
+    <!-- Contenido principal -->
+    <div class="content p-3">
+
+      <router-outlet>
+      </router-outlet>
+    </div>
+  </div>
+
+  <!--footer class="footer bg-light text-center text-lg-start">
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="#">Risk</a>
+    </div>
+  </footer-->

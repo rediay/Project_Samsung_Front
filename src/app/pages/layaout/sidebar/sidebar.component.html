@@ -1,0 +1,60 @@
+<div class="sidebar text-white p-3" style="background: linear-gradient(135deg, hsl(231, 78%, 35%) 0%, #2A2F4F 100%)">
+    <h4 class="text-white">Menú</h4>
+    <ul class="nav flex-column">
+        <ng-container *ngFor="let item of menuItems">
+            <li class="nav-item">
+                <ng-container *ngIf="!item.children || item.children.length === 0; else nestedMenu">
+                    <a class="nav-link text-white" [routerLink]="item.link">
+                        {{ item.label }} &nbsp; <i class="{{ item.icon }}"></i>
+                    </a>
+                </ng-container>
+                <ng-template #nestedMenu>
+                    <a class="nav-link text-white dropdown-toggle" href="#" (click)="toggle(item, $event)">
+                        {{ item.label }} &nbsp; <i class="{{ item.icon }}"></i>
+                    </a>
+                    <ul class="nav flex-column ms-3" *ngIf="item.isOpen">
+                        <ng-container *ngFor="let child of item.children">
+                            <li class="nav-item">
+                                <ng-container *ngIf="!child.children || child.children.length === 0; else nestedChildMenu">
+                                    <a class="nav-link text-white" [routerLink]="child.link">
+                                        {{ child.label }} &nbsp; <i class="{{ child.icon }}"></i>
+                                    </a>
+                                </ng-container>
+                                <ng-template #nestedChildMenu>
+                                    <a class="nav-link text-white dropdown-toggle" href="#" (click)="toggle(child, $event)">
+                                        {{ child.label }} &nbsp; <i class="{{ child.icon }}"></i>
+                                    </a>
+                                    <ul class="nav flex-column ms-3" *ngIf="child.isOpen">
+                                        <ng-container *ngFor="let grandChild of child.children">
+                                            <li class="nav-item">
+                                                <ng-container *ngIf="!grandChild.children || grandChild.children.length === 0; else nestedGrandChildMenu">
+                                                    <a class="nav-link text-white" [routerLink]="grandChild.link">
+                                                        {{ grandChild.label }} &nbsp; <i class="{{ grandChild.icon }}"></i>
+                                                    </a>
+                                                </ng-container>
+                                                <ng-template #nestedGrandChildMenu>
+                                                    <a class="nav-link text-white dropdown-toggle" href="#" (click)="toggle(grandChild, $event)">
+                                                        {{ grandChild.label }} &nbsp; <i class="{{ grandChild.icon }}"></i>
+                                                    </a>
+                                                    <ul class="nav flex-column ms-3" *ngIf="grandChild.isOpen">
+                                                        <ng-container *ngFor="let greatGrandChild of grandChild.children">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link text-white" [routerLink]="greatGrandChild.link">
+                                                                    {{ greatGrandChild.label }} &nbsp; <i class="{{ greatGrandChild.icon }}"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ng-container>
+                                                    </ul>
+                                                </ng-template>
+                                            </li>
+                                        </ng-container>
+                                    </ul>
+                                </ng-template>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </ng-template>
+            </li>
+        </ng-container>
+    </ul>
+</div>

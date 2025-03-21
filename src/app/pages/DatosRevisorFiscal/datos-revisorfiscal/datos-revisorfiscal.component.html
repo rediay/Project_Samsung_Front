@@ -1,0 +1,79 @@
+<div class="container" style="margin-top: 10px; font-size: 0.9rem;">
+    <br />
+    <h4>Datos de Revisor Fiscal</h4>
+
+    <form [formGroup]="formulario">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label>¿Tiene revisor fiscal?</label>
+                <select class="form-control" formControlName="tieneRevisorFiscal">
+                    <option [ngValue]="false">No</option>
+                    <option [ngValue]="true">Sí</option>
+                </select>
+            </div>
+            <div class="col-md-9" *ngIf="formulario.get('tieneRevisorFiscal')?.value === true">
+                <label>Justificar respuesta:</label>
+                <input type="text" class="form-control" formControlName="justificarRespuesta" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label>¿Revisor fiscal adscrito a alguna firma?</label>
+                <select class="form-control" formControlName="revisorFiscalAdscritoFirma">
+                    <option [ngValue]="false">No</option>
+                    <option [ngValue]="true">Sí</option>
+                </select>
+            </div>
+            <div class="col-md-9" *ngIf="formulario.get('revisorFiscalAdscritoFirma')?.value === true">
+                <label>En caso afirmativo, nombre de la firma:</label>
+                <br />
+                <input type="text" class="form-control" formControlName="nombreFirma" />
+            </div>
+        </div>
+
+        <hr />
+
+        <div *ngIf="formulario.get('tieneRevisorFiscal')?.value === true">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label>Nombre completo y apellidos:</label>
+                    <input type="text" class="form-control" formControlName="nombreCompletoApellidos" />
+                </div>
+                <div class="col-md-3">
+                    <label>Tipo de ID:</label>
+                    <input type="text" class="form-control" formControlName="tipoID" />
+                </div>
+                <div class="col-md-3">
+                    <label>Número de ID:</label>
+                    <input type="text" class="form-control" formControlName="numeroID" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label>Teléfono:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        formControlName="telefono" 
+                        (keypress)="allowOnlyNumbers($event)"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    />
+                </div>
+                <div class="col-md-3">
+                    <label>Ciudad:</label>
+                    <input type="text" class="form-control" formControlName="ciudad" />
+                </div>
+                <div class="col-md-3">
+                    <label>Dirección:</label>
+                    <input type="text" class="form-control" formControlName="direccion" />
+                </div>
+                <div class="col-md-3">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" formControlName="email" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

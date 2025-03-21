@@ -1,0 +1,65 @@
+.sidebar {
+    width: 250px;
+    height: 80vh;
+    transition: width 3.5s;
+    background-color: #2b80d4; /* Cambia el color de fondo del sidebar */
+  }
+  
+  .sidebar .nav-link {
+    color: white;
+    padding: 10px 20px; /* Ajusta el espacio interno de los enlaces */
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #2a8aeb;
+  }
+  
+  .sidebar .dropdown-menu {
+    background-color: #3b90e6; /* Color de fondo para el menú desplegable */
+  }
+  
+  .sidebar .dropdown-item {
+    color: white;
+    padding: 8px 20px; /* Ajusta el espacio interno de los elementos del menú desplegable */
+  }
+  
+  .sidebar .dropdown-item:hover {
+    background-color: #1c83eb;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 0px;
+  }
+  
+  .user-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  .dropdown-menu-right {
+    right: 0;
+    left: auto;
+  }
+
+  .contenmenu{
+    background-color: aquamarine;
+  }
+
+
+  .footer {
+    position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(63, 74, 230, 0.2);
+  }
+  
+  .footer .text-dark {
+    color: #343a40;
+  }
+  
+  .footer .text-dark:hover {
+    color: #007bff;
+    text-decoration: none;
+  }

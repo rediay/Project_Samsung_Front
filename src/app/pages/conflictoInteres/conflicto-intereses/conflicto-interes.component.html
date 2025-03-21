@@ -1,0 +1,637 @@
+<div class="container" style="margin-top: 10px; font-size: 0.9rem;">
+  <br />
+  <h4>DECLARACIÓN DE CONFLICTO DE INTERÉS</h4>
+  <div class="accordion" id="accordionConflicto">
+    <form [formGroup]="formulario">
+      <div class="row mb-4">
+        <table class="table table-bordered" style="margin-bottom: 0;">
+          <tbody>
+            <tr>
+              <td style="width: 50%;">
+                <label><strong>Fecha:</strong></label>
+                <input type="date" formControlName="fechaDeclaracion" class="form-control" />
+              </td>
+              <td style="width: 50%;">
+                <label><strong>Ciudad:</strong></label>
+                <input type="text" formControlName="ciudadDeclaracion" class="form-control" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label><strong>Nombres y apellidos:</strong></label>
+                <input type="text" formControlName="nombresApellidos" class="form-control" />
+              </td>
+              <td>
+                <label><strong>Cédula de ciudadanía:</strong></label>
+                <input type="text" formControlName="cedula" class="form-control" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label><strong>Posición o tipo de vinculación con SAMSUNG:</strong></label>
+                <input type="text" formControlName="tipoVinculacionSamsung" class="form-control" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="alert alert-secondary" style="font-size: 0.9rem;">
+        <p>
+          Esta declaración se presenta conforme lo previsto por el Código de Conducta, la Política Anticorrupción y
+          Soborno y el Programa de Transparencia y Ética Empresarial de SAMSUNG ELECTRONICS COLOMBIA S.A. (en adelante
+          “SAMSUNG”) y no exime a cada una de las contrapartes de SAMSUNG de cumplir con otras disposiciones del código,
+          la política y otros aspectos asociados a la regulación y modelo de cumplimiento de SAMSUNG.
+        </p>
+        <p><strong>Declaración:</strong></p>
+        <p>
+          Por medio de la presente, actuando en nombre propio (y de la persona jurídica que represento, si aplica) según
+          se indica al pie de mi firma, dejo constancia que conozco de la importancia de la veracidad de la información
+          aquí emitida, de la cual doy fe que es totalmente cierta y la cual declaro de manera libre y espontánea.
+          Entiendo que un “Conflicto de Intereses” surge cuando mis intereses de negocios, financieros, familiares,
+          políticos o personales, puedan interferir con mi juicio de valor en relación con los compromisos/obligaciones
+          hacia SAMSUNG. Esta situación de conflicto o contraposición, en la que los intereses personales pueden influir
+          en el cumplimiento de presentes o futuro/as compromisos y/o responsabilidades, afectando el interés de
+          SAMSUNG, debe ser advertida y gestionada en forma preventiva, evitando que se favorezcan intereses ajenos a
+          los de SAMSUNG.
+
+        </p>
+        <p>
+          Por lo anterior, declaro lo siguiente:
+          <br />
+        </p>
+      </div>
+
+
+
+      <!-- ACCORDION 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            a) Conozco y comprendo el Procedimiento de Conflicto de Interés, el Código de Conducta, la Política
+            Anticorrupción y Soborno, el Programa de Transparencia y Ética Empresarial (PTEE), y demás documentos y
+            regulaciones de SAMSUNG en materia de conflicto de interés, reconozco su importancia y me comprometo a
+            aplicarlos. En caso que los incumpla o la persona jurídica a la que represento, nos sometemos al régimen
+            sancionatorio definido en el PTEE, dichas políticas y regulación interna de SAMSUNG igualmente aplicable.
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+          data-bs-parent="#accordionConflicto">
+          <div class="accordion-body">
+            <div class="row">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="conoceProcedimientoConflicto" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+
+              <div class="col-md-6" *ngIf="formulario.get('conoceProcedimientoConflicto')?.value === false">
+                <label>En caso negativo, por favor indique su razón.</label>
+                <input type="text" formControlName="razonNoConocerProcedimientoConflicto" class="form-control"
+                  [class.is-invalid]="formulario.get('razonNoConocerProcedimientoConflicto')?.invalid && 
+                                        formulario.get('razonNoConocerProcedimientoConflicto')?.touched" />
+
+
+                <div *ngIf="formulario.get('razonNoConocerProcedimientoConflicto')?.invalid && 
+                          formulario.get('razonNoConocerProcedimientoConflicto')?.touched" class="invalid-feedback">
+                  Este campo es obligatorio
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--======-->
+
+      <!-- ACCORDION 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+            b) Actualmente doy a conocer si me encuentro, me he encontrado, o la persona jurídica que represento (si
+            aplica), así como sus empleados (en caso de que aplique) se encuentran en una situación de conflicto de
+            interés como las que se detallan a continuación:
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionConflicto">
+          <div class="accordion-body">
+            <h6><strong>i.</strong> Las siguientes son las sociedades, empresas, negocios y/u organizaciones sin ánimo
+              de lucro de las cuales soy dueño, socio, representante legal, o de los cuales he sido en los últimos 5
+              años:</h6>
+            <div formArrayName="entidadesDuenoSocio" class="mb-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Entidad o negocio</th>
+                    <th>Tipo de Participación y actividad</th>
+                    <th>Fechas</th>
+                    <th style="width: 40px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="
+                      let group of entidadesDuenoSocioArr.controls;
+                      let i = index
+                    " [formGroupName]="i">
+                    <td>
+                      <input type="text" class="form-control" formControlName="entidad" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="tipoParticipacion" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="fechas" />
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="eliminarEntidadDuenoSocio(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary btn-sm" (click)="agregarEntidadDuenoSocio()">
+                <small><small>+ Agregar fila</small></small>
+              </button>
+            </div>
+
+            <h6><strong>ii.</strong> Las siguientes son las sociedades, empresas, negocios y/u organizaciones sin ánimo
+              de lucro de las cuales soy directivo o empleado, o de los cuales he sido en los últimos 5 años:</h6>
+            <div formArrayName="entidadesDirectivoEmpleado" class="mb-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Entidad o negocio</th>
+                    <th>Tipo de Participación y actividad</th>
+                    <th>Fechas</th>
+                    <th style="width: 40px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="
+                      let group of entidadesDirectivoEmpleadoArr.controls;
+                      let i = index
+                    " [formGroupName]="i">
+                    <td>
+                      <input type="text" class="form-control" formControlName="entidad" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="tipoParticipacion" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="fechas" />
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="eliminarEntidadDirectivoEmpleado(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary btn-sm" (click)="agregarEntidadDirectivoEmpleado()">
+                <small><small>+ Agregar fila</small></small>
+              </button>
+            </div>
+
+            <h6><strong>iii.</strong> Las siguientes son las sociedades, empresas, negocios y/u organizaciones sin ánimo
+              de lucro con las cuales tengo un compromiso vigente de confidencialidad:</h6>
+            <div formArrayName="entidadesConfidencialidad" class="mb-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Entidad o negocio</th>
+                    <th>Tipo de Participación y detalle del compromiso</th>
+                    <th>Fechas de vigencia</th>
+                    <th style="width: 40px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="
+                      let group of entidadesConfidencialidadArr.controls;
+                      let i = index
+                    " [formGroupName]="i">
+                    <td>
+                      <input type="text" class="form-control" formControlName="entidad" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="descripcion" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="fechas" />
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="eliminarEntidadConfidencialidad(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary btn-sm" (click)="agregarEntidadConfidencialidad()">
+                <small><small>+ Agregar fila</small></small>
+              </button>
+            </div>
+
+            <h6><strong>iv.</strong> Las siguientes son las sociedades, empresas, negocios y/u organizaciones sin ánimo
+              de lucro de las cuales soy dueño, representante legal, miembro de junta directiva, directivo o empleado, o
+              de los cuales he sido en los últimos 5 años y que tienen algún tipo de relación o vinculación con SAMSUNG
+              o que la hayan tenido en los últimos cinco años:</h6>
+            <div formArrayName="entidadesRelacionSamsung" class="mb-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Entidad o negocio</th>
+                    <th>Tipo de Participación y actividad</th>
+                    <th>Fechas</th>
+                    <th style="width: 40px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="
+                      let group of entidadesRelacionSamsungArr.controls;
+                      let i = index
+                    " [formGroupName]="i">
+                    <td>
+                      <input type="text" class="form-control" formControlName="entidad" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="tipoRelacion" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="fechas" />
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="eliminarEntidadRelacionSamsung(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary btn-sm" (click)="agregarEntidadRelacionSamsung()">
+                <small><small>+ Agregar fila</small></small>
+              </button>
+            </div>
+
+            <h6><strong>v.</strong> Personas Políticamente Expuestas (aplica en caso de que usted, un familiar,
+              compañero permanente, asociado cercano, amigo o vinculado a usted sentimentalmente sea Funcionario
+              Público, haya sido en los dos últimos años o sea un potencial funcionario público).</h6>
+            <div formArrayName="pepInfo" class="mb-4">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Relación</th>
+                    <th>Nombre del potencial o actual Funcionario Público, cargo y entidad</th>
+                    <th>Fechas de vinculación con el Estado o posible fecha</th>
+                    <th style="width: 40px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="
+                      let group of pepInfoArr.controls;
+                      let i = index
+                    " [formGroupName]="i">
+                    <td>
+                      <input type="text" class="form-control" formControlName="relacion" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="nombreCargoEntidad" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="fechasVinculacionEstado" />
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="eliminarPepInfo(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary btn-sm" (click)="agregarPepInfo()">
+                <small><small>+ Agregar fila</small></small>
+              </button>
+            </div>
+            <div class="mt-3">
+              <label>
+                <strong>vi.</strong> Describa a continuación otros tipos de situaciones (otras relaciones como amigos,
+                socios, aliados, vinculación sentimental, enemistad, relación laboral como jefe/ subordinado, calidad de
+                deudor, acreedor, demandante, demandado, querellante, querellado, denunciante, denunciado, accionante,
+                accionado, etc.) con/contra algún o algunos empleados, directivos, representantes legales, accionistas,
+                miembros de Junta Directiva, clientes, aliados o competidores de SAMSUNG que puedan generar un potencial
+                conflicto de interés.
+              </label>
+              <textarea formControlName="otrasSituacionesConflicto" class="form-control" rows="3"></textarea>
+            </div>
+            <hr />
+            <h6><strong>vii.</strong> Decisiones o actividades en las cuales prevalece algún interés personal o
+              profesional frente a mis compromisos/obligaciones o las de la persona jurídica que represento (si aplica)
+              como colaborador, proveedor, contratista, aliado estratégico u otro.</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="decisionesInteresPersonal" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('decisionesInteresPersonal')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonDecisionesInteresPersonal" />
+              </div>
+            </div>
+            <br />
+            <h6><strong>viii.</strong> Tengo, o la persona jurídica a la que represento (si aplica) otras actividades
+              comerciales, laborales, empresariales, soy dueño, accionista o presto servicios a empresas competidoras
+              con SAMSUNG o he tenido estas actividades o vínculos en los últimos 5 años.</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="actividadesCompetidor" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('actividadesCompetidor')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonActividadesCompetidor" />
+              </div>
+            </div>
+            <br />
+            <h6><strong>ix.</strong> Tengo, o la persona jurídica a la que represento (si aplica) relaciones con el
+              Estado colombiano u otros gobiernos, Funcionarios Públicos o realizo donaciones o contribuciones.</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="relacionesEstado" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('relacionesEstado')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonRelacionesEstado" />
+              </div>
+            </div>
+
+            <h6><strong>x.</strong>He recibido o dado, he prometido o me han prometido regalos u hospitalidad a/o de
+              parte de personas vinculadas a SAMSUNG que hayan podido o se puedan interpretar como una situación que
+              afecte mi independencia o juicio, como contraparte de SAMSUNG.</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="regalosHospitalidad" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('regalosHospitalidad')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonRegalosHospitalidad" />
+              </div>
+            </div>
+            <br />
+            <h6><strong>xi.</strong> Tengo una relación laboral o comercial distinta a la que tengo con SAMSUNG,
+              incumpliendo la exclusividad establecida en el contrato laboral o comercial (según corresponda).</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="incumplimientoExclusividad" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('incumplimientoExclusividad')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonIncumplimientoExclusividad" />
+              </div>
+            </div>
+            <br />
+            <h6><strong>xii.</strong> Tengo relaciones con proveedores o contratistas de SAMSUNG, soy familiar, amigo, o
+              estoy vinculado sentimentalmente con alguno o algunos de ellos.</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="relacionesProveedores" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('relacionesProveedores')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonRelacionesProveedores" />
+              </div>
+            </div>
+
+            <hr />
+            <h6><strong>xiii.</strong> Tengo, he tenido un parentesco hasta el tercer grado de consanguinidad, segundo
+              de afinidad, primero civil, o soy cónyuge o compañero permanente de algún o algunos empleados,
+              representantes legales, directivos, accionistas o miembros de Junta Directiva, clientes o aliados de
+              SAMSUNG.</h6>
+            <div formArrayName="parentescosTercerGrado">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Tipo de relación</th>
+                    <th style="width: 40px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="
+                      let group of parentescosArr.controls;
+                      let i = index
+                    " [formGroupName]="i">
+                    <td>
+                      <input type="text" class="form-control" formControlName="nombre" />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" formControlName="tipoRelacion" />
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="eliminarParentesco(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary btn-sm" (click)="agregarParentesco()">
+                <small><small>+ Agregar</small></small>
+              </button>
+              <br />
+            </div>
+
+            <h6><strong>xiv.</strong> Tengo o la persona jurídica a la que represento inversiones o acciones de SAMSUNG.
+            </h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <select formControlName="inversionesSamsung" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="mt-2" formArrayName="detalleInversionesSamsung">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Tipo de título</th>
+                      <th>Cantidad de títulos</th>
+                      <th>Valor de los títulos</th>
+                      <th style="width: 40px;"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="
+                      let group of inversionesArr.controls;
+                      let i = index
+                      " [formGroupName]="i">
+                      <td>
+                        <input type="text" formControlName="tipoTitulo" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="number" formControlName="cantidadTitulos" class="form-control" />
+                      </td>
+                      <td>
+                        <input type="number" formControlName="valorTitulos" class="form-control" />
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="eliminarInversion(i)">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-sm" (click)="agregarInversion()">
+                  <small><small>+ Agregar inversión</small></small>
+                </button>
+              </div>
+            </div>
+            <br />
+            <h6><strong>xv.</strong> Otras situaciones no incluidas en las anteriores, que considero que puedan afectar
+              mi independencia en cuanto a mi relación o futura vinculación con SAMSUNG.</h6>
+            <div class="row mt-3">
+              <div class="col-md-2">
+                <br />
+                <select formControlName="otrasSituacionesAfectanIndependencia" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-6" *ngIf="formulario.get('otrasSituacionesAfectanIndependencia')?.value === true">
+                <label>En caso afirmativo, por favor indique su razón.</label>
+                <input type="text" class="form-control" formControlName="razonOtrasSituacionesAfectanIndependencia" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ACCORDION 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            c) Otras declaraciones
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionConflicto">
+          <div class="accordion-body">
+            <div class="row mb-2">
+              <div class="col-md-4">
+                <h6><strong>i.</strong> ¿Ha utilizado o compartido información confidencial (por ejemplo, información
+                  que no está disponible al público de forma general) de SAMSUNG?</h6>
+                <select formControlName="usoInformacionConfidencial" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h6><strong>ii.</strong> ¿Ha intentado ejercer influencia indebida sobre las políticas o decisiones de
+                  SAMSUNG para beneficio personal o beneficio de un tercero?</h6>
+                <select formControlName="influenciaIndebidaPoliticas" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h6><strong>iii.</strong> ¿Influye o ha influido indebidamente en la adjudicación o rechazo para la
+                  vinculación con SAMSUNG (mediante contratos o cualquier forma jurídica existente) de familiares,
+                  amigos, asociados, o cualquier otro tercero?</h6>
+                <select formControlName="influenciaIndebidaAdjudicaciones" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-2">
+              <div class="col-md-4">
+                <h6><strong>iv.</strong> ¿Compra a precio de descuento, si es aliado, y revende directa o indirectamente
+                  a terceros productos de SAMSUNG?</h6>
+                <select formControlName="descuentoReventa" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h6><strong>v.</strong> ¿Comparte las credenciales de acceso al portal de aliados con terceros ajenos a
+                  SAMSUNG? (sólo responda si es aliado)</h6>
+                <select formControlName="comparteCredencialesAliados" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h6><strong>vi.</strong> ¿Participa en actividades regulatorias u otras actividades de una comunidad o
+                  ente gubernamental que tengan un impacto directo sobre las actividades de SAMSUNG, salvo que ello sea
+                  autorizado por SAMSUNG?</h6>
+                <select formControlName="actividadesRegulatorias" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-2">
+              <div class="col-md-4">
+                <h6><strong>vii.</strong> ¿Actúa o ha actuado como corredor, comisionista o como cualquier intermediario
+                  para beneficio de un tercero en las transacciones que involucran a SAMSUNG o sus intereses?</h6>
+                <select formControlName="corredorIntermediario" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h6><strong>viii.</strong> ¿Acepta o ha aceptado, entrega o ha entregado, regalos, hospitalidad u otros
+                  beneficios a/de funcionarios públicos, empleados, aliados, proveedores, clientes u otros terceros
+                  relacionados con SAMSUNG?</h6>
+                <select formControlName="regalosFuncionarios" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <h6><strong>ix.</strong> ¿Aprueba, supervisa o gestiona, directa o indirectamente, transacciones o
+                  relaciones donde conozca del hecho de que hay un conflicto de interés real, potencial o percibido, en
+                  relación con los involucrados en la transacción o negocio?</h6>
+                <select formControlName="apruebaTransaccionesConflicto" class="form-control">
+                  <option [ngValue]="false">No</option>
+                  <option [ngValue]="true">Sí</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.a4-container {
+    width: 210mm;  /* Ancho A4 */
+    height: 297mm; /* Alto A4 */
+    margin: 0;
+    padding: 10mm; /* Margen de 1 cm */
+    overflow: hidden;
+    box-sizing: border-box;
+  }
